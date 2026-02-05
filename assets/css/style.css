@@ -10,8 +10,12 @@ body {
     padding-top: 8%;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 header {
-    position: fixed;    
+    position: fixed;
     top: 0;
 
     display: flex;
@@ -79,7 +83,7 @@ main {
     width: 100%;
 }
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
 
