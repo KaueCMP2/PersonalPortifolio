@@ -10,16 +10,26 @@
 /*! BODY THINGS  */
 body {
     background-color: var(--color-background);
-    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    ;
 
     font-family: 'Inter', sans-serif;
 }
 
-body::-webkit-scrollbar {
+/*? FINISH BODY THINGS */
+
+/*! SCROOLBAR THINGS  */
+::-webkit-scrollbar {
     display: none;
 }
 
-/*? FINISH BODY THINGS */
+body {
+    scrollbar-width: none;
+}
+
+/*? FINISH SCROOLBAR THINGS */
 
 /*! HEADER THINGS */
 header {
@@ -92,6 +102,10 @@ header {
     color: var(--color-background);
 }
 
+.link-start {
+    font-size: clamp(1.5vw, 2vw, 3vw);
+}
+
 /*? FINISH HEADER THINGS */
 
 /*! MAIN DEFINITIONS */
@@ -132,12 +146,12 @@ main {
     margin-top: 5%;
 }
 
-.tittle {
+.title {
     font-weight: 800;
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-.tittle2 {
+.title2 {
     font-weight: 500;
     font-size: clamp(1.5rem, 3vw, 2rem);
 }
@@ -174,8 +188,8 @@ h2 {
 }
 
 .text-about {
-    font-weight: 350;
-    font-size: clamp(1rem, 1.5rem, 2.5rem);
+    font-weight: 550;
+    font-size: clamp(0.6vw, 1.5vw, 4vw);
 }
 
 .img-pieces {
@@ -250,7 +264,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
 
     text-align: center;
     height: 100vh;
@@ -296,17 +310,12 @@ h2 {
     flex: 0 0 calc(25% - 10px);
     height: 50%;
 
-    box-shadow: var(--color-secundary) 0px 2px 8px 0px;
+    box-shadow: var(--color-terceary) 0px 2px 8px 0px;
     align-items: center;
     justify-content: center;
 
     border-radius: 10%;
     background-color: var(--color-background);
-}
-
-.logo-stack {
-    width: 50%;
-    height: auto;
 }
 
 .icon-stack-void {
@@ -335,7 +344,7 @@ h2 {
     justify-content: space-around;
 
     border-radius: 1vw;
-    box-shadow: var(--color-secundary) 0px 2px 5px 0px;
+    box-shadow: var(--color-terceary) 0px 2px 5px 0px;
 
     width: 95%;
     height: 70%;
@@ -351,7 +360,7 @@ h2 {
     height: 0%;
 }
 
-.tittle-text-session {
+.title-text-session {
     display: flex;
     width: 35%;
     height: 100%;
@@ -402,7 +411,7 @@ h2 {
     height: 30%;
     padding: 8px;
 
-    box-shadow: var(--color-secundary) 0px 2px 5px 0px;
+    box-shadow: var(--color-terceary) 0px 2px 5px 0px;
     align-items: center;
     justify-content: center;
 
@@ -412,15 +421,23 @@ h2 {
 
 .link-start {
     position: absolute;
-    bottom: -125px;
-    z-index: 1;
 
-    padding: 20px 20px 20px 20px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+
+    z-index: 101;
+    padding: 7.5px 15px 10px 15px;
     border-radius: 100%;
+
+    text-align: center;
 
     color: var(--color-background);
     background-color: var(--color-secundary);
+}
 
+.fa-solid {
+    font-size: 1.7vw;
 }
 
 /*? FINISH SECTION FAQ THINGS */
@@ -432,6 +449,10 @@ footer {
     align-items: center;
     justify-content: center;
     clip-path: polygon(0 100%, 100% 100%, 100% 0%, 0 14%);
+
+    z-index: inherit;
+
+    anchor-name: --footer;
 
     height: 105vh;
     width: 100%;
@@ -452,7 +473,7 @@ footer {
 
 .contact-text {
     font-size: clamp(8vw, 10vw, 12rem);
-    
+
     anchor-name: --contact-text;
 }
 
@@ -461,7 +482,7 @@ footer {
     flex-direction: row;
 
     position: absolute;
-    position-anchor: --contact-text;    
+    position-anchor: --contact-text;
     right: anchor(right);
     translate: 0 100%;
     z-index: 999;
@@ -476,7 +497,7 @@ footer {
     width: clamp(3vw, 5vw, 6vw);
     height: auto;
 
-    box-shadow: var(--color-background) 0px 2px 5px 0px;
+    box-shadow: var(--color-terceary) 0px 2px 5px 0px;
     position: absolute;
 }
 
